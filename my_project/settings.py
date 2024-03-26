@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%idgbhkyoxt!v3k8)k-=c)x#^wobm*ow+_=bq==74rh!zqy2=w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['8000-davidfb94-gymtracker-binrb0vqpvn.ws-eu110.gitpod.io']
+ALLOWED_HOSTS = ['8000-davidfb94-gymtracker-binrb0vqpvn.ws-eu110.gitpod.io',
+                '.herokuapp.com']
 
 
 # Application definition
