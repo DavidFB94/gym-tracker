@@ -15,3 +15,15 @@ class Workout(models.Model):
         return self.name
 
 
+class Exercise(models.Model):
+    """
+    Model for user exercises for the workout.
+    """
+    workout = models.ForeignKey(Workout, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50, null=False, blank=False)
+    weight = models.CharField(max_length=30, null=False, blank=False)
+    sets = models.PositiveIntegerField(null=False, blank=False)
+    reps = models.CharField(max_length=20, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
