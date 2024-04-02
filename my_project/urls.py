@@ -17,10 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from hello_world import views as hello_views
-from home import views as home_views
 
 urlpatterns = [
     path('hello/', hello_views.hello, name='hello_world'),
     path('admin/', admin.site.urls),
-    path('', home_views.home_page, name='home'),
+    path('', include('home.urls'), name='home-urls'),
 ]
