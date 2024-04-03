@@ -1,19 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
+{% block content %}
 
-<body>
-    <h1>Workouts</h1>
-    {% for workout in object_list %}
-    <h2>{{workout.name}}</h2>
-    <p>{{workout.date}}</p>
-    {% endfor %}
-</body>
+<!-- home.html content starts here -->
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <h1>Workouts</h1>
+            </div>
+            <div class="row">
+                {% for workout in object_list %}
+                <div class="workout-card">
+                    <h3>{{workout.name}}</h3>
+                    <p>{{workout.date}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col">
+            Column
+        </div>
+    </div>
+</div>
 
-</html>
+<!-- home.html content ends here -->
+{% endblock %}
