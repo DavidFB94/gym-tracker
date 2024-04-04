@@ -1,0 +1,92 @@
+[
+    {
+        "model": "home.workout",
+        "pk": 10,
+        "fields": {
+            "user": 1,
+            "name": "Upper body 3",
+            "note": "A note",
+            "date": "2024-02-02"
+        }
+    },
+    {
+        "model": "home.workout",
+        "pk": 11,
+        "fields": {
+            "user": 1,
+            "name": "Lower body 3",
+            "note": "A note",
+            "date": "2024-02-04"
+        }
+    },
+    {
+        "model": "home.workout",
+        "pk": 12,
+        "fields": {
+            "user": 1,
+            "name": "Upper body 4",
+            "note": "A note",
+            "date": "2024-02-12"
+        }
+    },
+    {
+        "model": "home.workout",
+        "pk": 13,
+        "fields": {
+            "user": 1,
+            "name": "Lower body 4",
+            "note": "A note",
+            "date": "2024-02-20"
+        }
+    },
+    {
+        "model": "home.workout",
+        "pk": 14,
+        "fields": {
+            "user": 1,
+            "name": "Upper body 5",
+            "note": "A note",
+            "date": "2024-02-26"
+        }
+    },
+    {
+        "model": "home.workout",
+        "pk": 15,
+        "fields": {
+            "user": 1,
+            "name": "Lower body 5",
+            "note": "A note",
+            "date": "2024-03-02"
+        }
+    },
+    {
+        "model": "home.workout",
+        "pk": 16,
+        "fields": {
+            "user": 1,
+            "name": "Upper body 6",
+            "note": "A note",
+            "date": "2024-02-10"
+        }
+    },
+    {
+        "model": "home.workout",
+        "pk": 17,
+        "fields": {
+            "user": 1,
+            "name": "Lower body 6",
+            "note": "A note",
+            "date": "2024-02-18"
+        }
+    },
+    {
+        "model": "home.workout",
+        "pk": 18,
+        "fields": {
+            "user": 1,
+            "name": "Upper body 7",
+            "note": "A note",
+            "date": "2024-02-28"
+        }
+    }
+]
