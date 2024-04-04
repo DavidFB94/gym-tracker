@@ -8,7 +8,7 @@ class Workout(models.Model):
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, null=False, blank=False)
-    note = models.TextField(null=False, blank=False)
+    note = models.TextField(null=True, blank=True)
     date = models.DateField(null=False, blank=False)
 
     def __str__(self):
@@ -19,7 +19,7 @@ class Exercise(models.Model):
     """
     Model for user exercises for the workout.
     """
-    workout = models.ForeignKey(Workout, on_delete=models.CASCADE)
+    workout = models.ForeignKey(Workout, on_delete=models.CASCADE, related_name="exercises")
     name = models.CharField(max_length=50, null=False, blank=False)
     weight = models.CharField(max_length=30, null=False, blank=False)
     sets = models.PositiveIntegerField(null=False, blank=False)
