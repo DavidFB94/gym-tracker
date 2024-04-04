@@ -24,6 +24,51 @@
                         </div>
                     </a>
                 </div>
+                <!-- Modal -->
+                <div class="modal fade" id="modal-workout-{{workout.id}}" tabindex="-1"
+                    aria-labelledby="modal-workout-{{workout.id}}-label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title fs-5" id="modal-workout-{{workout.id}}-label">
+                                    {{workout.name}}
+                                    <small class="text-muted fs-6 ms-5">{{workout.date}}</small>
+                                </h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-start table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Exercise</th>
+                                            <th scope="col">Weight</th>
+                                            <th scope="col">Sets</th>
+                                            <th scope="col">Reps</th>
+                                            <th scope="col">Edit</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for exercise in workout.exercises.all %}
+                                        <tr>
+                                            <td>{{exercise.name}}</td>
+                                            <td>{{exercise.weight}}</td>
+                                            <td>{{exercise.sets}}</td>
+                                            <td>{{exercise.reps}}</td>
+                                            <td>edit</td>
+                                            <td>delete</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
