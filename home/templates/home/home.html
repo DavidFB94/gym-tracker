@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
 <!-- home.html content starts here -->
 <div class="container text-center">
     <div class="row">
@@ -79,6 +79,21 @@
         </div>
     </div>
 </div>
-
+{% else %}
+<div class="row">
+    <div class="col text-center">
+        <h2>Welcome to GymTracker</h2>
+        <p>You need to be logged in to use our features.</p>
+        <p>
+            Do you already have an account? Then please
+            <a class="link" href="{{ login_url }}">log in</a>.
+        </p>
+        <p>
+            Otherwise, you can
+            <a class="link" href="{{ signup_url }}">sign up</a> here!
+        </p>
+    </div>
+</div>
+{% endif %}
 <!-- home.html content ends here -->
 {% endblock %}
