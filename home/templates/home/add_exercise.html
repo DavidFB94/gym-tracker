@@ -4,7 +4,11 @@
 {% if user.is_authenticated %}
 <!-- home.html content starts here -->
 <h1>Add Exercise</h1>
-
+<form action="{% url 'add_exercise' workout.id %}" id="exerciseForm" method="post" class="mt-5">
+    {{ exercise_form.as_p }}
+    {% csrf_token %}
+    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+</form>
 {% else %}
 <div class="row">
     <div class="col text-center">
