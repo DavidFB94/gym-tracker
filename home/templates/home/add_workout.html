@@ -3,8 +3,12 @@
 {% block content %}
 {% if user.is_authenticated %}
 <!-- home.html content starts here -->
-<h1>Add Workout</h1>
-
+<h1>Create Workout</h1>
+<form id="workoutForm" method="post" style="margin-top: 1.3em;">
+    {{ workout_form }}
+    {% csrf_token %}
+    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+</form>
 {% else %}
 <div class="row">
     <div class="col text-center">
