@@ -45,8 +45,6 @@
                                             <th scope="col">Weight</th>
                                             <th scope="col">Sets</th>
                                             <th scope="col">Reps</th>
-                                            <th scope="col">Edit</th>
-                                            <th scope="col">Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -56,8 +54,6 @@
                                             <td>{{exercise.weight}}</td>
                                             <td>{{exercise.sets}}</td>
                                             <td>{{exercise.reps}}</td>
-                                            <td>edit</td>
-                                            <td>delete</td>
                                         </tr>
                                         {% endfor %}
                                     </tbody>
@@ -73,27 +69,29 @@
                 {% endfor %}
             </div>
         </div>
-        <!-- Add workout -->
-        <div class="col-12 col-md-4 order-1 order-md-2">
-            Column
+        <div class="col-12 col-md-4 order-1 order-md-2 d-flex align-items-center justify-content-center">
+            <div class="row">
+                <button type="button" class="btn btn-primary">Add
+                    workout
+                </button>
+            </div>
         </div>
-    </div>
-</div>
-{% else %}
-<div class="row">
-    <div class="col text-center">
-        <h2>Welcome to GymTracker</h2>
-        <p>You need to be logged in to use our features.</p>
-        <p>
-            Do you already have an account? Then please
-            <a class="link" href="{{ login_url }}">log in</a>.
-        </p>
-        <p>
-            Otherwise, you can
-            <a class="link" href="{{ signup_url }}">sign up</a> here!
-        </p>
-    </div>
-</div>
-{% endif %}
-<!-- home.html content ends here -->
-{% endblock %}
+        {% else %}
+        <div class="row">
+            <div class="col text-center">
+                <h2>Welcome to GymTracker</h2>
+                <p>You need to be logged in to use our features.</p>
+                <p>
+                    Do you already have an account?
+                    <br>
+                    <a class="link" href="{{ login_url }}">Log in</a>.
+                </p>
+                <p>
+                    Otherwise, you can
+                    <a class="link" href="{{ signup_url }}">sign up</a> here!
+                </p>
+            </div>
+        </div>
+        {% endif %}
+        <!-- home.html content ends here -->
+        {% endblock %}
