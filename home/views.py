@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from .models import Workout
+from .models import Exercise
 from .forms import WorkoutForm
+from .forms import ExerciseForm
 
 
 def home(request):
@@ -32,3 +34,16 @@ def add_workout(request):
     return render(request, template, context)
 
 
+def add_exercise(request):
+    workout_form = WorkoutForm(request.POST or None)
+    if request.method == "POST":
+        if exercise_form.is_valid():
+            exercise_form.instance.user = request.user
+            exercise_form.save()
+            messages.success(request, "Exercise Added!")
+            return redirect(reverse("home"))
+    template = "home/add_exercise.html"
+    context = {
+        "exercise_form": exercise_form,
+    }
+    return render(request, template, context)
