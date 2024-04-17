@@ -89,3 +89,11 @@ def edit_exercise(request, id):
         "exercise_form": exercise_form,
     }
     return render(request, template, context)
+
+
+def delete_workout(request, id):
+    workout = get_object_or_404(Workout, id=id)
+    workout.delete()
+    messages.success(request, "Workout deleted!")
+    return redirect(reverse("home"))
+
