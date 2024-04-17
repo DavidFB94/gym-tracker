@@ -7,24 +7,46 @@
 <form id="workoutForm" method="post" class="mt-5">
     {{ workout_form.as_p }}
     {% csrf_token %}
-    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+    <button id="submitButton" type="submit" class="btn btn-signup">Update</button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+    data-bs-target="#delete-confirmation">
+    Delete workout
+</button>
 </form>
-{% else %}
-<div class="row">
-    <div class="col text-center">
-        <h2>Welcome to GymTracker</h2>
-        <p>You need to be logged in to use our features.</p>
-        <p>
-            Do you already have an account?
-            <br>
-            <a class="link" href="{{ login_url }}">Log in</a>.
-        </p>
-        <p>
-            Otherwise, you can
-            <a class="link" href="{{ signup_url }}">sign up</a> here!
-        </p>
-    </div>
-</div>
-{% endif %}
-<!-- home.html content ends here -->
-{% endblock %}
+<!-- Modal delete confirmation -->
+<div class="modal fade" id="delete-confirmation" tabindex="-1" aria-labelledby="delete-confirmation-modal-label"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="delete-confirmation-modal-label">
+                    Delete confirmation
+                </h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Permanently delete {{workout.name}}?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <a href="{% url 'delete_workout' workout.id %}" type="button" class="btn btn-danger">Delete workout</a>
+            </div>
+            {% else %}
+            <div class="row">
+                <div class="col text-center">
+                    <h2>Welcome to GymTracker</h2>
+                    <p>You need to be logged in to use our features.</p>
+                    <p>
+                        Do you already have an account?
+                        <br>
+                        <a class="link" href="{{ login_url }}">Log in</a>.
+                    </p>
+                    <p>
+                        Otherwise, you can
+                        <a class="link" href="{{ signup_url }}">sign up</a> here!
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+            <!-- home.html content ends here -->
+            {% endblock %}
