@@ -7,8 +7,29 @@
 <form action="{% url 'edit_exercise' exercise.id %}" id="exerciseForm" method="post" class="mt-5">
     {{ exercise_form.as_p }}
     {% csrf_token %}
-    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Update</button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-confirmation">
+        Delete exercise
+    </button>
 </form>
+<!-- Modal delete confirmation -->
+<div class="modal fade" id="delete-confirmation" tabindex="-1" aria-labelledby="delete-confirmation-modal-label"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="delete-confirmation-modal-label">
+                    Delete confirmation
+                </h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Permanently delete {{exercise.name}}?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <a href="{% url 'delete_exercise' exercise.id %}" type="button" class="btn btn-danger">Delete exercise</a>
+            </div>
 {% else %}
 <div class="row">
     <div class="col text-center">
