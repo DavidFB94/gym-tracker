@@ -31,7 +31,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h2 class="modal-title fs-5" id="modal-workout-{{workout.id}}-label">
-                                    {{workout.name}}
+                                    <a href="{% url 'edit_workout' workout.id %}">{{workout.name}}</a>
                                     <small class="text-muted fs-6 ms-5">{{workout.date}}</small>
                                 </h2>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
