@@ -45,6 +45,7 @@ def add_exercise(request, id):
             exercise_form.instance.user = request.user
             exercise_form.instance.workout = workout
             exercise_form.save()
+            exercise_form = ExerciseForm
             messages.success(request, "Exercise Added!")
     template = "home/add_exercise.html"
     context = {
@@ -67,5 +68,24 @@ def edit_workout(request, id):
     context = {
         "workout": workout,
         "workout_form": workout_form,
+    }
+    return render(request, template, context)
+
+
+def edit_exercise(request, id):
+    exercise = get_object_or_404(Exercise, id=id)
+    exercise_form = ExerciseForm(request.POST or None, instance=exercise)
+    if request.method == "POST":
+        if exercise_form.is_valid():
+            exercise_form.instance.user = request.user
+            exercise_form.instance.exercise = exercise
+            exercise_form.save()
+            exercise_form = ExerciseForm
+            messages.success(request, "Exercise updated!")
+            return redirect(reverse("home"))
+    template = "home/edit_exercise.html"
+    context = {
+        "exercise": exercise,
+        "exercise_form": exercise_form,
     }
     return render(request, template, context)
