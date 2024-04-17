@@ -52,3 +52,20 @@ def add_exercise(request, id):
         "exercise_form": exercise_form,
     }
     return render(request, template, context)
+
+
+def edit_workout(request, id):
+    workout = get_object_or_404(Workout, id=id)
+    workout_form = WorkoutForm(request.POST or None, instance=workout)
+    if request.method == "POST":
+        if workout_form.is_valid():
+            workout_form.instance.user = request.user
+            workout_form.save()
+            messages.success(request, "Workout updated!")
+            return redirect(reverse("home"))
+    template = "home/edit_workout.html"
+    context = {
+        "workout": workout,
+        "workout_form": workout_form,
+    }
+    return render(request, template, context)
