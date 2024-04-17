@@ -97,3 +97,9 @@ def delete_workout(request, id):
     messages.success(request, "Workout deleted!")
     return redirect(reverse("home"))
 
+
+def delete_exercise(request, id):
+    exercise = get_object_or_404(Exercise, id=id)
+    exercise.delete()
+    messages.success(request, "Exercise deleted!")
+    return redirect(reverse("home"))
