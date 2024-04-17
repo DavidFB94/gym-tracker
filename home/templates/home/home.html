@@ -24,7 +24,7 @@
                         </div>
                     </a>
                 </div>
-                <!-- Modal -->
+                <!-- Modal open workout-->
                 <div class="modal fade" id="modal-workout-{{workout.id}}" tabindex="-1"
                     aria-labelledby="modal-workout-{{workout.id}}-label" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -50,7 +50,8 @@
                                     <tbody>
                                         {% for exercise in workout.exercises.all %}
                                         <tr>
-                                            <td><a href="{% url 'edit_exercise' exercise.id %}">{{exercise.name}}</a></td>
+                                            <td><a href="{% url 'edit_exercise' exercise.id %}">{{exercise.name}}</a>
+                                            </td>
                                             <td>{{exercise.weight}}</td>
                                             <td>{{exercise.sets}}</td>
                                             <td>{{exercise.reps}}</td>
@@ -76,9 +77,9 @@
         </div>
         <div class="col-12 col-md-4 order-1 order-md-2 d-flex align-items-center justify-content-center">
             <div class="row">
-                    <a href="{% url 'add_workout' %}" type="button" class="btn btn-primary">
-                        Add workout
-                    </a>
+                <a href="{% url 'add_workout' %}" type="button" class="btn btn-primary">
+                    Add workout
+                </a>
             </div>
         </div>
         {% else %}

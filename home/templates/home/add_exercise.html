@@ -7,7 +7,7 @@
 <form action="{% url 'add_exercise' workout.id %}" id="exerciseForm" method="post" class="mt-5">
     {{ exercise_form.as_p }}
     {% csrf_token %}
-    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Add exercise</button>
 </form>
 {% else %}
 <div class="row">
