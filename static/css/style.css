@@ -1,3 +1,14 @@
+
+.success {
+    margin-top: 10px;
+    background-color: rgb(255, 230, 0);
+}
+
+.error {
+    margin-top: 10px;
+    background-color: rgb(218, 32, 72);
+}
+
 .btn-signup,
 .btn-edit {
     background-color: #188181;
