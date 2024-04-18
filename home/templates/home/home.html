@@ -3,14 +3,14 @@
 {% block content %}
 {% if user.is_authenticated %}
 <!-- home.html content starts here -->
-<div class="container text-center">
+<div class="container-fluid text-center">
     <div class="row">
-        <div class="col-12 col-md-8 order-2 order-md-1">
+        <div class="col-12 order-2 order-sm-1">
             <div class="row">
                 <h1>Workouts</h1>
             </div>
             <!-- Saved workouts -->
-            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 d-flex justify-content-center">
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 d-flex justify-content-center">
                 {% for workout in object_list %}
                 <div class="col my-1">
                     <a href="#" class="text-decoration-none" data-bs-toggle="modal"
@@ -75,9 +75,9 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-12 col-md-4 order-1 order-md-2 d-flex align-items-center justify-content-center">
+        <div class="col-12 order-1 order-sm-2 d-flex align-items-center justify-content-center">
             <div class="row">
-                <a href="{% url 'add_workout' %}" type="button" class="btn btn-primary">
+                <a href="{% url 'add_workout' %}" type="button" class="btn btn-primary btn-lg btn-margin">
                     Add workout
                 </a>
             </div>
