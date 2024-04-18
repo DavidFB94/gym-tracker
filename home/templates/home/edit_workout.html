@@ -3,16 +3,17 @@
 {% block content %}
 {% if user.is_authenticated %}
 <!-- home.html content starts here -->
-<h1>Edit Workout</h1>
-<form id="workoutForm" method="post" class="mt-5">
-    {{ workout_form.as_p }}
-    {% csrf_token %}
-    <button id="submitButton" type="submit" class="btn btn-signup">Update</button>
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-    data-bs-target="#delete-confirmation">
-    Delete workout
-</button>
-</form>
+<div class="container-fluid text-center">
+    <h1>Edit Workout</h1>
+    <form id="workoutForm" method="post" class="mt-5">
+        {{ workout_form.as_p }}
+        {% csrf_token %}
+        <button id="submitButton" type="submit" class="btn btn-signup">Update</button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-confirmation">
+            Delete workout
+        </button>
+    </form>
+</div>
 <!-- Modal delete confirmation -->
 <div class="modal fade" id="delete-confirmation" tabindex="-1" aria-labelledby="delete-confirmation-modal-label"
     aria-hidden="true">

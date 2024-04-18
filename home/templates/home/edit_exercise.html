@@ -3,15 +3,17 @@
 {% block content %}
 {% if user.is_authenticated %}
 <!-- home.html content starts here -->
-<h1>Edit Exercise</h1>
-<form action="{% url 'edit_exercise' exercise.id %}" id="exerciseForm" method="post" class="mt-5">
-    {{ exercise_form.as_p }}
-    {% csrf_token %}
-    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Update</button>
+<div class="container-fluid text-center">
+    <h1>Edit Exercise</h1>
+    <form action="{% url 'edit_exercise' exercise.id %}" id="exerciseForm" method="post" class="mt-5">
+        {{ exercise_form.as_p }}
+        {% csrf_token %}
+        <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Update</button>
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-confirmation">
-        Delete exercise
-    </button>
-</form>
+            Delete exercise
+        </button>
+    </form>
+</div>
 <!-- Modal delete confirmation -->
 <div class="modal fade" id="delete-confirmation" tabindex="-1" aria-labelledby="delete-confirmation-modal-label"
     aria-hidden="true">
@@ -28,24 +30,25 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                <a href="{% url 'delete_exercise' exercise.id %}" type="button" class="btn btn-danger">Delete exercise</a>
+                <a href="{% url 'delete_exercise' exercise.id %}" type="button" class="btn btn-danger">Delete
+                    exercise</a>
             </div>
-{% else %}
-<div class="row">
-    <div class="col text-center">
-        <h2>Welcome to GymTracker</h2>
-        <p>You need to be logged in to use our features.</p>
-        <p>
-            Do you already have an account?
-            <br>
-            <a class="link" href="{{ login_url }}">Log in</a>.
-        </p>
-        <p>
-            Otherwise, you can
-            <a class="link" href="{{ signup_url }}">sign up</a> here!
-        </p>
-    </div>
-</div>
-{% endif %}
-<!-- home.html content ends here -->
-{% endblock %}
+            {% else %}
+            <div class="row">
+                <div class="col text-center">
+                    <h2>Welcome to GymTracker</h2>
+                    <p>You need to be logged in to use our features.</p>
+                    <p>
+                        Do you already have an account?
+                        <br>
+                        <a class="link" href="{{ login_url }}">Log in</a>.
+                    </p>
+                    <p>
+                        Otherwise, you can
+                        <a class="link" href="{{ signup_url }}">sign up</a> here!
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+            <!-- home.html content ends here -->
+            {% endblock %}
