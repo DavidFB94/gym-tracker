@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.core.paginator import Paginator
 from django.views import generic
 from django.contrib import messages
 from .models import Workout
@@ -9,14 +10,18 @@ from .forms import ExerciseForm
 
 def home(request):
     if request.user.is_authenticated:
-        queryset = Workout.objects.filter(user=request.user)
+        # Display workout list
+        queryset = Workout.objects.filter(user=request.user).order_by('-date')
     else:
         queryset = []
-    template = "home/home.html"
+    # Paginator setup: 15 items per page
+    paginator = Paginator(queryset, 15)  # 15 workouts per page
+    page_number = request.GET.get('page')  # get the page number from the query parameters
+    page_obj = paginator.get_page(page_number)  # get the requested page
     context = {
-        "object_list": queryset,
+        "page_obj": page_obj,  # use 'page_obj' in your template to access the paginated items
     }
-    return render(request, template, context)
+    return render(request, "home/home.html", {"page_obj": page_obj})
 
 
 def add_workout(request):
@@ -47,6 +52,7 @@ def add_exercise(request, id):
             exercise_form.save()
             exercise_form = ExerciseForm
             messages.success(request, "Exercise Added!")
+            return redirect(reverse("home"))
     template = "home/add_exercise.html"
     context = {
         "workout": workout,
