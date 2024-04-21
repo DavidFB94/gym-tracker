@@ -10,8 +10,8 @@
                 <h1>Workouts</h1>
             </div>
             <!-- Saved workouts -->
-            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 d-flex justify-content-center">
-                {% for workout in object_list %}
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 d-flex justify-content-center">
+                {% for workout in page_obj.object_list %}
                 <div class="col my-1">
                     <a href="#" class="text-decoration-none" data-bs-toggle="modal"
                         data-bs-target="#modal-workout-{{workout.id}}">
@@ -70,6 +70,18 @@
                     </div>
                 </div>
                 {% endfor %}
+            </div>
+            <div>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center top-margin">
+                        {% if page_obj.has_previous %}
+                        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
+                        {% endif %}
+                        {% if page_obj.has_next %}
+                        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
             </div>
         </div>
         <div class="col-12 order-1 order-sm-2 d-flex align-items-center justify-content-center">
