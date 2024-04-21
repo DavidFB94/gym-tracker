@@ -1,3 +1,40 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.top-margin {
+    margin-top: 40px;
+}
+
+.container-main {
+    min-width: fit-content;
+}
+
+.card {
+    background-color: rgb(241, 241, 241);
+}
+
+.btn-margin {
+    margin: 20px 0px 20px;
+    text-align: center;
+}
+
+.success {
+    margin-top: 10px;
+    background-color: rgb(255, 230, 0);
+}
+
+.error {
+    margin-top: 10px;
+    background-color: rgb(218, 32, 72);
+}
+
 .btn-signup,
 .btn-edit {
     background-color: #188181;
@@ -35,4 +72,12 @@
 
 .faded {
     color: rgb(172, 175, 175);
+}
+
+.footer-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: white;
+    width: 100%;
 }
