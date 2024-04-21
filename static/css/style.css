@@ -51,3 +51,11 @@
 .faded {
     color: rgb(172, 175, 175);
 }
+
+.footer-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: white;
+    width: 100%;
+}
