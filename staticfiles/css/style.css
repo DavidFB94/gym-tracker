@@ -1,7 +1,9 @@
+/* General styles */
 body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    color: rgba(33, 37, 41);
 }
 
 main {
@@ -17,7 +19,24 @@ main {
 }
 
 .card {
-    background-color: rgb(241, 241, 241);
+    background-color: rgba(33, 37, 41, 0.40);
+}
+
+/* Button styles */
+.btn {
+    min-width: 100px;
+}
+
+.btn-orange {
+    background-color: #ff8800ab;
+    color: #fff;
+    box-shadow: 10px;
+}
+
+.btn-orange:hover,
+.btn-orange:active {
+    background-color: #ff8800;
+    color: #fff;
 }
 
 .btn-margin {
@@ -25,6 +44,55 @@ main {
     text-align: center;
 }
 
+.button-container {
+    max-width: 210px;
+}
+
+.btn-signup,
+.btn-edit {
+    background-color: #ff8800c9;
+    color: #fff;
+    margin: 1px;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #ff8800;
+    color: #fff;
+}
+
+.btn-delete {
+    color: #fff;
+    background: #E84610;
+}
+
+.btn-danger {
+    margin-top: 5px;
+}
+
+/* Link styles */
+.page-link:hover,
+.page-link:active {
+    background-color: #fff;
+    color: #ff8800c9;
+}
+
+.link {
+    color: #ff8800c9;
+    text-decoration: underline;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
+}
+
+.faded {
+    color: rgb(172, 175, 175);
+}
+
+/* Django messages styles */
 .success {
     margin-top: 10px;
     background-color: rgb(255, 230, 0);
@@ -35,45 +103,7 @@ main {
     background-color: rgb(218, 32, 72);
 }
 
-.btn-signup,
-.btn-edit {
-    background-color: #188181;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
-}
-
-.link {
-    color: #23BBBB;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
-
-.btn-delete {
-    color: #fff;
-    background: #E84610;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
-
-.faded {
-    color: rgb(172, 175, 175);
-}
-
+/* Footer styles */
 .footer-text {
     display: flex;
     flex-wrap: wrap;
