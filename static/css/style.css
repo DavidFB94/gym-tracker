@@ -7,50 +7,42 @@ body {
 }
 
 main {
+    /* To push footer down */
     flex: 1 0 auto;
 }
 
-.top-margin {
-    margin-top: 40px;
-}
-
-.container-main {
-    min-width: fit-content;
-}
-
+/* Workout card styles */
 .card {
-    background-color: rgba(33, 37, 41, 0.40);
+    background-color: rgba(255, 136, 0, 0.6);
 }
 
+.card:hover {
+    background-color: rgba(255, 136, 0, 0.8);
+}
 /* Button styles */
 .btn {
     min-width: 100px;
-}
-
-.btn-orange {
-    background-color: #ff8800ab;
-    color: #fff;
-    box-shadow: 10px;
-}
-
-.btn-orange:hover,
-.btn-orange:active {
-    background-color: #ff8800;
-    color: #fff;
-}
-
-.btn-margin {
-    margin: 20px 0px 20px;
-    text-align: center;
 }
 
 .button-container {
     max-width: 210px;
 }
 
+.btn-orange {
+    background-color: rgb(33, 37, 41, 0.8);
+    color: #fff;
+    box-shadow: 10px;
+}
+
+.btn-orange:hover,
+.btn-orange:active {
+    background-color: rgba(255, 136, 0, 0.6);
+    color: #fff;
+}
+
 .btn-signup,
 .btn-edit {
-    background-color: #ff8800c9;
+    background-color: rgba(255, 136, 0, 0.6);
     color: #fff;
     margin: 1px;
 }
@@ -59,15 +51,6 @@ main {
 .btn-signup:active {
     background-color: #ff8800;
     color: #fff;
-}
-
-.btn-delete {
-    color: #fff;
-    background: #E84610;
-}
-
-.btn-danger {
-    margin-top: 5px;
 }
 
 /* Link styles */
