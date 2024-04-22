@@ -13,14 +13,14 @@
             {{ exercise_form | crispy }}
             {% csrf_token %}
         </div>
-        <div>
-            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Update</button>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-confirmation">
-                Delete exercise
-            </button>
+        <div  class="d-flex flex-row flex-wrap justify-content-center button-container">
+            <button id="submitButton" type="submit" class="btn btn-signup">Update</button>
             <a href="{% url 'home' %}" type="button" class="btn btn-secondary">
                 Back
             </a>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-confirmation">
+                Delete exercise
+            </button>
         </div>
     </form>
 </div>

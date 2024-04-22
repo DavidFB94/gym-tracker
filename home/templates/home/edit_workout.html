@@ -12,14 +12,14 @@
             {{ workout_form | crispy }}
             {% csrf_token %}
         </div>
-        <div>
+        <div class="d-flex flex-row flex-wrap justify-content-center button-container">
             <button id="submitButton" type="submit" class="btn btn-signup">Update</button>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-confirmation">
-                Delete workout
-            </button>
             <a href="{% url 'home' %}" type="button" class="btn btn-secondary">
                 Back
             </a>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-confirmation">
+                Delete workout
+            </button>
         </div>
     </form>
 </div>
