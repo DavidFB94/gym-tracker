@@ -2,10 +2,9 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.core.paginator import Paginator
 from django.views import generic
 from django.contrib import messages
-from .models import Workout
-from .models import Exercise
-from .forms import WorkoutForm
-from .forms import ExerciseForm
+from django.contrib.auth.decorators import login_required
+from .models import Workout, Exercise
+from .forms import WorkoutForm, ExerciseForm
 
 
 def home(request):
@@ -24,6 +23,7 @@ def home(request):
     return render(request, "home/home.html", {"page_obj": page_obj})
 
 
+@login_required
 def add_workout(request):
     workout_form = WorkoutForm(request.POST or None)
     if request.method == "POST":
@@ -39,6 +39,7 @@ def add_workout(request):
     return render(request, template, context)
 
 
+@login_required
 def add_exercise(request, id):
     workout = get_object_or_404(Workout, id=id)
     if workout.user != request.user:
@@ -61,6 +62,7 @@ def add_exercise(request, id):
     return render(request, template, context)
 
 
+@login_required
 def edit_workout(request, id):
     workout = get_object_or_404(Workout, id=id)
     if workout.user != request.user:
@@ -81,6 +83,7 @@ def edit_workout(request, id):
     return render(request, template, context)
 
 
+@login_required
 def edit_exercise(request, id):
     exercise = get_object_or_404(Exercise, id=id)
     if exercise.workout.user != request.user:
@@ -103,6 +106,7 @@ def edit_exercise(request, id):
     return render(request, template, context)
 
 
+@login_required
 def delete_workout(request, id):
     workout = get_object_or_404(Workout, id=id)
     if workout.user != request.user:
@@ -113,6 +117,7 @@ def delete_workout(request, id):
     return redirect(reverse("home"))
 
 
+@login_required
 def delete_exercise(request, id):
     exercise = get_object_or_404(Exercise, id=id)
     if exercise.workout.user != request.user:
