@@ -5,67 +5,73 @@
 {% block content %}
 {% if user.is_authenticated %}
 <!-- home.html content starts here -->
-<div class="container-fluid text-center">
-    <h1>Add Exercise</h1>
-    <form action="{% url 'add_exercise' workout.id %}" id="exerciseForm" method="post"
-        class="mt-5 d-flex flex-column align-items-center">
-        <div>
-            {{ exercise_form | crispy }}
-            {% csrf_token %}
-        </div>
-        <div>
-            <button id="submitButton" type="submit" class="btn btn-signup">Submit</button>
-            <a href="{% url 'home' %}" type="button" class="btn btn-secondary">
-                Back
-            </a>
-        </div>
-    </form>
-</div>
-<!-- Exercises in workout list -->
-<div class="container-fluid text-center d-flex align-items-center flex-column col-6">
-    <h3 class="mt-5 fs-5">
-        Exercises in workout:
-        <br>
-        {{workout.name}}
-    </h3>
-    <table class="table table-sm mt-3 table-responsive">
-        <thead>
-            <tr>
-                <th>Exercise</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for exercise in workout.exercises.all %}
-            <tr>
-                <td><a href="{% url 'edit_exercise' exercise.id %}" class="link">{{exercise.name}}</a>
-                </td>
-                <td>{{exercise.weight}}</td>
-                <td>{{exercise.sets}}</td>
-                <td>{{exercise.reps}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-{% else %}
-<div class="row">
-    <div class="col text-center">
-        <h2>Welcome to GymTracker</h2>
-        <p>You need to be logged in to use our features.</p>
-        <p>
-            Do you already have an account?
-            <br>
-            <a class="link" href="{{ login_url }}">Log in</a>.
-        </p>
-        <p>
-            Otherwise, you can
-            <a class="link" href="{{ signup_url }}">sign up</a> here!
-        </p>
+<section>
+    <div class="container-fluid text-center">
+        <h1>Add Exercise</h1>
+        <form action="{% url 'add_exercise' workout.id %}" id="exerciseForm" method="post"
+            class="mt-5 d-flex flex-column align-items-center">
+            <div>
+                {{ exercise_form | crispy }}
+                {% csrf_token %}
+            </div>
+            <div>
+                <button id="submitButton" type="submit" class="btn btn-signup">Submit</button>
+                <a href="{% url 'home' %}" type="button" class="btn btn-secondary">
+                    Back
+                </a>
+            </div>
+        </form>
     </div>
-</div>
+</section>
+<!-- Exercises in workout list -->
+<section>
+    <div class="container-fluid text-center d-flex align-items-center flex-column col-6">
+        <h3 class="mt-5 fs-5">
+            Exercises in workout:
+            <br>
+            {{workout.name}}
+        </h3>
+        <table class="table table-sm mt-3 table-responsive">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Weight</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for exercise in workout.exercises.all %}
+                <tr>
+                    <td><a href="{% url 'edit_exercise' exercise.id %}" class="link">{{exercise.name}}</a>
+                    </td>
+                    <td>{{exercise.weight}}</td>
+                    <td>{{exercise.sets}}</td>
+                    <td>{{exercise.reps}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% else %}
+<section>
+    <div class="row">
+        <div class="col text-center">
+            <h2>Welcome to GymTracker</h2>
+            <p>You need to be logged in to use our features.</p>
+            <p>
+                Do you already have an account?
+                <br>
+                <a class="link" href="{{ login_url }}">Log in</a>.
+            </p>
+            <p>
+                Otherwise, you can
+                <a class="link" href="{{ signup_url }}">sign up</a> here!
+            </p>
+        </div>
+    </div>
+</section>
 {% endif %}
 <!-- home.html content ends here -->
 {% endblock %}

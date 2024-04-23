@@ -3,110 +3,123 @@
 {% block content %}
 {% if user.is_authenticated %}
 <!-- home.html content starts here -->
-<div class="container-fluid text-center">
-    <div class="row">
-        <div class="col-12 order-2 order-sm-1">
-            <div class="row">
-                <h1 class="mt-3">Saved workouts</h1>
-            </div>
-            <!-- Saved workouts -->
-            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-5 justify-content-center">
-                {% for workout in page_obj.object_list %}
-                <div class="col my-1">
-                    <a href="#" class="text-decoration-none" data-bs-toggle="modal"
-                        data-bs-target="#modal-workout-{{workout.id}}">
-                        <div class="card h-100 p-1 border rounded-3 border-dark">
-                            <div class="card-body p-2">
-                                <small class="fs-6 fw-bold">{{workout.name}}</small>
-                                <br>
-                                <span>{{workout.date}}</span>
-                            </div>
-                        </div>
-                    </a>
+<section>
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col-12 order-2 order-sm-1">
+                <div class="row">
+                    <h1 class="mt-3">Saved workouts</h1>
                 </div>
-                <!-- Modal open workout-->
-                <div class="modal fade" id="modal-workout-{{workout.id}}" tabindex="-1"
-                    aria-labelledby="modal-workout-{{workout.id}}-label" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2 class="modal-title fs-5" id="modal-workout-{{workout.id}}-label">
-                                    <a href="{% url 'edit_workout' workout.id %}" class="link">{{workout.name}}</a>
-                                    <small class="text-muted fs-6 ms-5">{{workout.date}}</small>
-                                </h2>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                <!-- Saved workouts -->
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-5 justify-content-center">
+                    {% for workout in page_obj.object_list %}
+                    <div class="col my-1">
+                        <a href="#" class="text-decoration-none" data-bs-toggle="modal"
+                            data-bs-target="#modal-workout-{{workout.id}}">
+                            <div class="card h-100 p-1 border rounded-3 border-dark">
+                                <div class="card-body p-2">
+                                    <small class="fs-6 fw-bold">{{workout.name}}</small>
+                                    <br>
+                                    <span>{{workout.date}}</span>
+                                </div>
                             </div>
-                            <div class="modal-body text-start table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Exercise</th>
-                                            <th scope="col">Weight</th>
-                                            <th scope="col">Sets</th>
-                                            <th scope="col">Reps</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for exercise in workout.exercises.all %}
-                                        <tr>
-                                            <td><a href="{% url 'edit_exercise' exercise.id %}" class="link">{{exercise.name}}</a>
-                                            </td>
-                                            <td>{{exercise.weight}}</td>
-                                            <td>{{exercise.sets}}</td>
-                                            <td>{{exercise.reps}}</td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="{% url 'add_exercise' workout.id %}" type="button" class="btn btn-orange">
-                                    Add exercise
-                                </a>
-                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                        </a>
+                    </div>
+                    <!-- Modal open workout-->
+                    <div class="modal fade" id="modal-workout-{{workout.id}}" tabindex="-1"
+                        aria-labelledby="modal-workout-{{workout.id}}-label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title fs-5" id="modal-workout-{{workout.id}}-label">
+                                        <a href="{% url 'edit_workout' workout.id %}" class="link">{{workout.name}}</a>
+                                        <small class="text-muted fs-6 ms-5">{{workout.date}}</small>
+                                    </h2>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-start table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Exercise</th>
+                                                <th scope="col">Weight</th>
+                                                <th scope="col">Sets</th>
+                                                <th scope="col">Reps</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for exercise in workout.exercises.all %}
+                                            <tr>
+                                                <td><a href="{% url 'edit_exercise' exercise.id %}"
+                                                        class="link">{{exercise.name}}</a>
+                                                </td>
+                                                <td>{{exercise.weight}}</td>
+                                                <td>{{exercise.sets}}</td>
+                                                <td>{{exercise.reps}}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- Open workout modal buttons -->
+                                <div class="modal-footer">
+                                    <a href="{% url 'add_exercise' workout.id %}" type="button" class="btn btn-orange">
+                                        Add exercise
+                                    </a>
+                                    <button type="button" class="btn btn-outline-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
+                <!-- Pagination -->
+                <div>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center mt-3">
+                            {% if page_obj.has_previous %}
+                            <li><a href="?page={{ page_obj.previous_page_number }}"
+                                    class="page-link btn-orange border rounded-3">&laquo; PREV</a></li>
+                            {% endif %}
+                            {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}"
+                                    class="page-link btn-orange border rounded-3">NEXT &raquo;</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div>
-                <nav aria-label="Page navigation">
-                    <ul class="pagination justify-content-center mt-3">
-                        {% if page_obj.has_previous %}
-                        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link btn-orange border rounded-3">&laquo; PREV</a></li>
-                        {% endif %}
-                        {% if page_obj.has_next %}
-                        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn-orange border rounded-3">NEXT &raquo;</a></li>
-                        {% endif %}
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="col-12 order-1 order-sm-2 d-flex align-items-center justify-content-center">
-            <div class="row">
-                <a href="{% url 'add_workout' %}" type="button" class="btn btn-orange btn-lg mt-3">
-                    Add workout
-                </a>
-            </div>
-        </div>
-        {% else %}
+</section>
+<section>
+    <!-- Add workout button -->
+    <div class="col-12 order-1 order-sm-2 d-flex align-items-center justify-content-center">
         <div class="row">
-            <div class="col text-center">
-                <h2>Welcome to GymTracker</h2>
-                <p>You need to be logged in to use our features.</p>
-                <p>
-                    Do you already have an account?
-                    <br>
-                    <a class="link" href="{{ login_url }}">Log in</a>.
-                </p>
-                <p>
-                    Otherwise, you can
-                    <a class="link" href="{{ signup_url }}">sign up</a> here!
-                </p>
-            </div>
+            <a href="{% url 'add_workout' %}" type="button" class="btn btn-orange btn-lg mt-3">
+                Add workout
+            </a>
         </div>
-        {% endif %}
-        <!-- home.html content ends here -->
-        {% endblock %}
+    </div>
+</section>
+{% else %}
+<section>
+    <div class="row">
+        <div class="col text-center mt-5">
+            <h2>Welcome to GymTracker</h2>
+            <p>You need to be logged in to use our features.</p>
+            <p>
+                Do you already have an account?
+                <br>
+                <a class="link" href="{{ login_url }}">Log in</a>.
+            </p>
+            <p>
+                Otherwise, you can
+                <a class="link" href="{{ signup_url }}">sign up</a> here!
+            </p>
+        </div>
+    </div>
+</section>
+{% endif %}
+<!-- home.html content ends here -->
+{% endblock %}
