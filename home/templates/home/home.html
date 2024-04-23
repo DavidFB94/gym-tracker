@@ -31,9 +31,10 @@
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h2 class="modal-title fs-5" id="modal-workout-{{workout.id}}-label">
+                                    <h2 class="modal-title fs-5 text-start" id="modal-workout-{{workout.id}}-label">
                                         <a href="{% url 'edit_workout' workout.id %}" class="link">{{workout.name}}</a>
-                                        <small class="text-muted fs-6 ms-5">{{workout.date}}</small>
+                                        <br class="d-block d-sm-none">
+                                        <small class="text-muted fs-6 ms-0 ms-sm-5">{{workout.date}}</small>
                                     </h2>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
