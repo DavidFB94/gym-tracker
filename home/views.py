@@ -63,6 +63,9 @@ def add_exercise(request, id):
 
 def edit_workout(request, id):
     workout = get_object_or_404(Workout, id=id)
+    if workout.user != request.user:
+        messages.error(request, "Access denied, this isn't your workout!")
+        return redirect(reverse("home"))
     workout_form = WorkoutForm(request.POST or None, instance=workout)
     if request.method == "POST":
         if workout_form.is_valid():
@@ -80,6 +83,9 @@ def edit_workout(request, id):
 
 def edit_exercise(request, id):
     exercise = get_object_or_404(Exercise, id=id)
+    if exercise.workout.user != request.user:
+        messages.error(request, "Access denied, this isn't your exercise!")
+        return redirect(reverse("home"))
     exercise_form = ExerciseForm(request.POST or None, instance=exercise)
     if request.method == "POST":
         if exercise_form.is_valid():
@@ -99,6 +105,9 @@ def edit_exercise(request, id):
 
 def delete_workout(request, id):
     workout = get_object_or_404(Workout, id=id)
+    if workout.user != request.user:
+        messages.error(request, "Access denied, this isn't your workout!")
+        return redirect(reverse("home"))
     workout.delete()
     messages.success(request, "Workout deleted!")
     return redirect(reverse("home"))
@@ -106,6 +115,9 @@ def delete_workout(request, id):
 
 def delete_exercise(request, id):
     exercise = get_object_or_404(Exercise, id=id)
+    if exercise.workout.user != request.user:
+        messages.error(request, "Access denied, this isn't your exercise!")
+        return redirect(reverse("home"))
     exercise.delete()
     messages.success(request, "Exercise deleted!")
     return redirect(reverse("home"))
