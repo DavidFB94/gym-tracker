@@ -3,7 +3,6 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-{% if user.is_authenticated %}
 <!-- home.html content starts here -->
 <section>
     <div class="container-fluid text-center">
@@ -45,24 +44,4 @@
                         workout</a>
                 </div>
 </section>
-{% else %}
-<section>
-    <div class="row">
-        <div class="col text-center">
-            <h2>Welcome to GymTracker</h2>
-            <p>You need to be logged in to use our features.</p>
-            <p>
-                Do you already have an account?
-                <br>
-                <a class="link" href="{{ login_url }}">Log in</a>.
-            </p>
-            <p>
-                Otherwise, you can
-                <a class="link" href="{{ signup_url }}">sign up</a> here!
-            </p>
-        </div>
-    </div>
-</section>
-{% endif %}
-<!-- home.html content ends here -->
 {% endblock %}
