@@ -18,7 +18,7 @@ def home(request):
     page_number = request.GET.get('page')  # get the page number from the query parameters
     page_obj = paginator.get_page(page_number)  # get the requested page
     context = {
-        "page_obj": page_obj,  # use 'page_obj' in your template to access the paginated items
+        "page_obj": page_obj,  # 'page_obj' template to access the paginated items
     }
     return render(request, "home/home.html", {"page_obj": page_obj})
 
@@ -53,7 +53,6 @@ def add_exercise(request, id):
             exercise_form.save()
             exercise_form = ExerciseForm
             messages.success(request, "Exercise Added!")
-            return redirect(reverse("home"))
     template = "home/add_exercise.html"
     context = {
         "workout": workout,
@@ -97,7 +96,7 @@ def edit_exercise(request, id):
             exercise_form.save()
             exercise_form = ExerciseForm
             messages.success(request, "Exercise updated!")
-            return redirect(reverse("home"))
+            return redirect(add_exercise, exercise.workout.id)
     template = "home/edit_exercise.html"
     context = {
         "exercise": exercise,
