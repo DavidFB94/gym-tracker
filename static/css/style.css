@@ -19,6 +19,7 @@ main {
 .card:hover {
     background-color: rgba(255, 136, 0, 0.8);
 }
+
 /* Button styles */
 .btn {
     min-width: 100px;
@@ -93,4 +94,17 @@ main {
     justify-content: space-evenly;
     color: white;
     width: 100%;
+}
+
+.footer-text p {
+    margin-bottom: 5px;
+}
+
+#github-link {
+    text-decoration: none;
+}
+
+#github-icon {
+    width: 20px;
+    margin-left: 5px;
 }
