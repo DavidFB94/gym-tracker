@@ -21,6 +21,35 @@
         </div>
     </form>
 </div>
+<!-- Exercises in workout list -->
+<div class="container-fluid text-center d-flex align-items-center flex-column col-6">
+    <h3 class="mt-5 fs-5">
+        Exercises in workout:
+        <br>
+        {{workout.name}}
+    </h3>
+    <table class="table table-sm mt-3 table-responsive">
+        <thead>
+            <tr>
+                <th>Exercise</th>
+                <th>Weight</th>
+                <th>Sets</th>
+                <th>Reps</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for exercise in workout.exercises.all %}
+            <tr>
+                <td><a href="{% url 'edit_exercise' exercise.id %}" class="link">{{exercise.name}}</a>
+                </td>
+                <td>{{exercise.weight}}</td>
+                <td>{{exercise.sets}}</td>
+                <td>{{exercise.reps}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% else %}
 <div class="row">
     <div class="col text-center">
