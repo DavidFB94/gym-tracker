@@ -65,7 +65,7 @@
                                 </div>
                                 <!-- Open workout modal buttons -->
                                 <div class="modal-footer">
-                                    <a href="{% url 'add_exercise' workout.id %}" type="button" class="btn btn-orange">
+                                    <a href="{% url 'add_exercise' workout.id %}" type="button" class="btn btn-red">
                                         Add exercise
                                     </a>
                                     <button type="button" class="btn btn-outline-secondary"
@@ -82,11 +82,11 @@
                         <ul class="pagination justify-content-center mt-3">
                             {% if page_obj.has_previous %}
                             <li><a href="?page={{ page_obj.previous_page_number }}"
-                                    class="page-link btn-orange border rounded-3">&laquo; PREV</a></li>
+                                    class="page-link btn-red border rounded-3">&laquo; PREV</a></li>
                             {% endif %}
                             {% if page_obj.has_next %}
                             <li><a href="?page={{ page_obj.next_page_number }}"
-                                    class="page-link btn-orange border rounded-3">NEXT &raquo;</a></li>
+                                    class="page-link btn-red border rounded-3">NEXT &raquo;</a></li>
                             {% endif %}
                         </ul>
                     </nav>
@@ -95,7 +95,7 @@
             <!-- Add workout button -->
             <div class="col-12 order-1 order-sm-2 d-flex align-items-center justify-content-center">
                 <div class="row">
-                    <a href="{% url 'add_workout' %}" type="button" class="btn btn-orange btn-lg mt-3">
+                    <a href="{% url 'add_workout' %}" type="button" class="btn btn-red btn-lg mt-3">
                         Add workout
                     </a>
                 </div>

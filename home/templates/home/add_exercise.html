@@ -13,7 +13,7 @@
                 {{ exercise_form | crispy }}
                 {% csrf_token %}
             </div>
-            <div>
+            <div class="d-flex flex-row flex-wrap justify-content-center button-container">
                 <button id="submitButton" type="submit" class="btn btn-signup">Submit</button>
                 <a href="{% url 'home' %}" type="button" class="btn btn-secondary">
                     Back

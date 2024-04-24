@@ -3,7 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    color: rgba(33, 37, 41);
+    color: #212529;
 }
 
 main {
@@ -13,44 +13,45 @@ main {
 
 /* Workout card styles */
 .card {
-    background-color: rgba(255, 136, 0, 0.6);
+    background-color: #ad1a26ec;
+    color: #fff;
 }
 
 .card:hover {
-    background-color: rgba(255, 136, 0, 0.8);
+    background-color: #9C1C27;
 }
 
 /* Button styles */
 .btn {
     min-width: 100px;
+    margin: 1px;
 }
 
 .button-container {
-    max-width: 210px;
+    max-width: 220px;
 }
 
-.btn-orange {
-    background-color: rgb(33, 37, 41, 0.8);
+.btn-red {
+    background-color: #212529cc;
     color: #fff;
     box-shadow: 10px;
 }
 
-.btn-orange:hover,
-.btn-orange:active {
-    background-color: rgba(255, 136, 0, 0.6);
+.btn-red:hover,
+.btn-red:active {
+    background-color: #AD1A26;
     color: #fff;
 }
 
 .btn-signup,
 .btn-edit {
-    background-color: rgba(255, 136, 0, 0.6);
+    background-color: #AD1A26;
     color: #fff;
-    margin: 1px;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #ff8800;
+    background-color: #9C1C27;
     color: #fff;
 }
 
@@ -58,11 +59,11 @@ main {
 .page-link:hover,
 .page-link:active {
     background-color: #fff;
-    color: #ff8800c9;
+    color: #AD1A26;
 }
 
 .link {
-    color: #ff8800c9;
+    color: #AD1A26;
     text-decoration: underline;
 }
 
@@ -73,18 +74,18 @@ main {
 }
 
 .faded {
-    color: rgb(172, 175, 175);
+    color: #acafaf;
 }
 
 /* Django messages styles */
 .success {
     margin-top: 10px;
-    background-color: rgb(255, 230, 0);
+    background-color: #ffe600;
 }
 
 .error {
     margin-top: 10px;
-    background-color: rgb(218, 32, 72);
+    background-color: #b43b55ce;
 }
 
 /* Footer styles */
