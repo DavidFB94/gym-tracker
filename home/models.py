@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
+
 class Workout(models.Model):
     """
     Model for user workout tracking.
@@ -19,7 +19,9 @@ class Exercise(models.Model):
     """
     Model for user exercises for the workout.
     """
-    workout = models.ForeignKey(Workout, on_delete=models.CASCADE, related_name="exercises")
+    workout = models.ForeignKey(
+        Workout, on_delete=models.CASCADE, related_name="exercises"
+        )
     name = models.CharField(max_length=50, null=False, blank=False)
     weight = models.CharField(max_length=30, null=False, blank=False)
     sets = models.PositiveIntegerField(null=False, blank=False)
