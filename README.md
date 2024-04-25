@@ -44,3 +44,32 @@ Font was applied automatically by Bootstrap, which selects the best `font-family
 - [Font Awesome](https://fontawesome.com/icons/rectangle-list?f=sharp&s=regular) icon was used for the favicon.
 
 - [GitHub](https://github.com/logos) icon was used for the GitHub link.
+
+## User Stories
+
+### Site Users
+
+- As a site user I can register an account so that I can log in, and use the site in an authorized and secure way.
+- As a site user I can log in with my account information so that I can use the sites features.
+- As a site user I can log out from my account so that I can avoid unauthorized access to my data.
+- As a site user I can create a workout so that I can plan/track my workout schedule.
+- As a site user I can view saved workouts so that I can access the saved information.
+- As a site user I can delete saved workouts so that I can remove workouts that I no longer wish to track.
+- As a site user I can create exercises so that I can make add them to my workout.
+- As a site user I can view my exercises in a workout so that I can plan/track my workout.
+- As a site user I can update my exercises so that I make can make changes if required.
+- As a site user I can delete saved exercises so that I can remove exercises that I no longer wish to track.
+- As a site user I can filter saved workouts so that I can find the workout I'm looking for more easily.
+- As a site user I can create a workout plan so that I can re-use workouts more easily.
+- As a site user I can add my personal profile so that I can add additional information.
+- As a site user I can create a workout calendar so that I can plan my workout activity.
+- As a site user I can receive reminders from the app so that I can achieve better adherence to my workout plan.
+- As a site user I can view my saved data so that I can get an overview of my activity/progress.
+- As a site user I can fill in a feedback form so that I can submit development requests to the site administrator.
+
+### Site Admin
+
+- As a site admin I can moderate users and their data so that I can make changes when required.
+- As a site admin I can store feedback messages in the database so that I can review them.
+- As a site admin I can I can mark feedback messages as "read" so that I can keep track on which messages I have reviewed.
+
