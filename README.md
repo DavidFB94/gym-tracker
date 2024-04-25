@@ -73,3 +73,33 @@ Font was applied automatically by Bootstrap, which selects the best `font-family
 - As a site admin I can store feedback messages in the database so that I can review them.
 - As a site admin I can I can mark feedback messages as "read" so that I can keep track on which messages I have reviewed.
 
+## Wireframes
+
+Wireframes were developed for mobile and desktop.
+I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+
+### Mobile Wireframes
+
+<details>
+<summary> Click here to see the Mobile Wireframes </summary>
+
+Home
+  - ![screenshot](documentation/wireframes/mobile-home.png)
+
+Add/edit workout
+  - ![screenshot](documentation/wireframes/mobile-add-workout.png)
+
+</details>
+
+### Desktop Wireframes
+
+<details>
+<summary> Click here to see the Desktop Wireframes </summary>
+
+Home
+  - ![screenshot](documentation/wireframes/desktop-home.png)
+
+Add/edit workout
+  - ![screenshot](documentation/wireframes/desktop-add-workout.png)
+
+</details>
