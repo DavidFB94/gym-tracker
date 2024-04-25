@@ -27,6 +27,10 @@ class WorkoutForm(ModelForm):
         label='', widget=forms.DateInput(attrs={'type': 'date'})
     )
 
+    class Meta:
+        model = Exercise
+        fields = ('name', 'note', 'date',)
+
 
 class ExerciseForm(ModelForm):
     """
