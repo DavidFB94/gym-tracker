@@ -122,3 +122,27 @@ Add/edit workout
 - [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) used for creating wireframes.
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the favicon.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
+
+## Database Design
+
+Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models.
+Understanding the relationships between different tables can save time later in the project.
+
+```python
+class Workout:
+	user = ForeignKey(User, on_delete=models.CASCADE)
+	name = CharField(max_length=100, null=False, blank=False)
+	note = TextField(null=True, blank=True)
+	date = DateField(null=False, blank=False)
+```
+
+```python
+class Exercise:
+	workout = ForeignKey(
+		Workout,on_delete=models.CASCADE,related_name="exercises")
+	name = CharField(max_length=50, null=False, blank=False)
+	weight = CharField(max_length=30, null=False, blank=False)
+	sets = PositiveIntegerField(null=False, blank=False)
+	reps = CharField(max_length=20, null=False, blank=False)
+```
+
