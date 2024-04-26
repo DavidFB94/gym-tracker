@@ -472,3 +472,41 @@ You can fork this repository by using the following steps:
 ### Local VS Deployment
 
 No significant differences between local vs deployed version.
+
+## Credits
+
+The Django project base was set up following Code Institutes walkthrough. 
+
+In base.html template, the header with navbar, logged in status and Django messages display was copied from the same walkthrough project.
+
+In home.html template, the pagination was copied from Code Institutes walkthrough.
+
+### Content
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+| [Djangoproject](https://docs.djangoproject.com/en/5.0/topics/db/models/) | models.py | Setting up models |
+| [Djangoproject](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/) | views.py | Setting up Django messages |
+| [Djangoproject](https://docs.djangoproject.com/en/5.0/topics/pagination/#using-paginator-in-a-view-function) | views.py | Setting up Django pagination in view |
+| [Bootstrap](https://getbootstrap.com/docs/5.3/layout/grid/) | Page layout | Using Bootstrap grid system |
+| [Bootstrap](https://getbootstrap.com/docs/5.3/components/modal/) | Workout cards, delete confirmations | Setting up Modals |
+| [Bootstrap](https://getbootstrap.com/docs/5.3/content/tables/) | Exercise list | Setting up tables |
+| [Bootstrap](https://getbootstrap.com/docs/5.3/components/card/) | Workout cards | Setting up cards |
+| [YouTube](https://www.youtube.com/watch?v=wmYSKVWOOTM&ab_channel=PrettyPrinted) | views.py | Setting up pagination |
+| [YouTube](https://www.youtube.com/watch?v=MZwKoi0wu2Q&ab_channel=BugBytes) | forms.py | How to use widgets in Django forms, setting up Date Input field |
+| [YouTube](https://www.youtube.com/watch?v=quJzUzCs6Q0&ab_channel=CodingEntrepreneurs) | forms.py | How to use attributes in Django forms, hide labels, placeholder text |
+| [Django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/index.html) | Forms | How to utilize crispy forms |
+| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+
+### Media
+
+| Source | Location | Type | Notes |
+| --- | --- | --- | --- |
+| [FontAwesome](fontawesome.com/icons/rectangle-list?f=sharp&s=regular) | entire site | image | favicon on all pages |
+| [GitHub](https://github.com/logos) | footer | image | GitHub link icon in footer |
+
+### Acknowledgements
+
+- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
+- I would like to thank my wife Maria for believing in me, and allowing me to make this transition into software development.
