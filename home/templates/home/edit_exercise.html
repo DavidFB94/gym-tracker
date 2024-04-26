@@ -16,7 +16,7 @@
             <div class="d-flex flex-row flex-wrap justify-content-center button-container">
                 <button id="submitButton" type="submit" class="btn btn-signup">Update</button>
                 <!-- Redirect back to previous page -->
-                <a href="{{request.META.HTTP_REFERER}}" type="button" class="btn btn-secondary">
+                <a href="{{request.META.HTTP_REFERER}}" class="btn btn-secondary">
                     Back
                 </a>
                 <button type="button" class="btn btn-outline-danger mt-2" data-bs-toggle="modal"
@@ -42,7 +42,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <a href="{% url 'delete_exercise' exercise.id %}" type="button" class="btn btn-danger">Delete
+                    <a href="{% url 'delete_exercise' exercise.id %}" class="btn btn-danger">Delete
                         exercise</a>
                 </div>
 </section>
