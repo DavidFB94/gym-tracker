@@ -333,16 +333,14 @@ To obtain my own Postgres Database from Code Institute, I followed these steps:
 > - Code Institute students are allowed a maximum of 8 databases.
 > - Databases are subject to deletion after 18 months.
 
-### Cloudinary API but WHITENOISE??
+### WhiteNoise
 
-This project uses the [Cloudinary API](https://cloudinary.com) to store media assets online, due to the fact that Heroku doesn't persist this type of data.
+This project uses the [Whitenoise](https://whitenoise.readthedocs.io/en/latest/) to store static files online, due to the fact that Heroku doesn't persist this type of data.
 
-To obtain your own Cloudinary API key, create an account and log in.
+To install whitenoise, run the `pip install whitenoise` command.
+Include it in MIDDLEWARE inside settings.py
 
-- For *Primary interest*, you can choose *Programmable Media for image and video API*.
-- Optional: *edit your assigned cloud name to something more memorable*.
-- On your Cloudinary Dashboard, you can copy your **API Environment Variable**.
-- Be sure to remove the `CLOUDINARY_URL=` as part of the API **value**; this is the **key**.
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ### Heroku Deployment
 
@@ -359,7 +357,6 @@ Deployment steps are as follows, after account setup:
 
 | Key | Value |
 | --- | --- |
-| `CLOUDINARY_URL` | user's own value |
 | `DATABASE_URL` | user's own value |
 | `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
 | `SECRET_KEY` | user's own value |
@@ -422,7 +419,6 @@ Sample `env.py` file:
 ```python
 import os
 
-os.environ.setdefault("CLOUDINARY_URL", "user's own value")
 os.environ.setdefault("DATABASE_URL", "user's own value")
 os.environ.setdefault("SECRET_KEY", "user's own value")
 
