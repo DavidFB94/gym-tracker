@@ -158,7 +158,7 @@ Add/edit workout
 
 - **#8 - Add workout**
 
-    - Button to add workout. Opens the "add workout" form. Added hover effect (used on all the sites buttons), to increase visual feedback for the user. 
+    - Button to add workout. Opens the "add workout" form. Added hover effect (used on all the sites buttons), to increase visual feedback for the user. Button positioned at the top for smaller screens.
 
 ![screenshot](documentation/features/feature08-1.png)
 ![screenshot](documentation/features/feature08.png)
