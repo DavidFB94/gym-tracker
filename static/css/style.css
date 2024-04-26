@@ -11,6 +11,12 @@ main {
     flex: 1 0 auto;
 }
 
+
+hr {
+    display: inline-block;
+    width: 50%;
+}
+
 /* Workout card styles */
 .card {
     background-color: #ad1a26ec;
