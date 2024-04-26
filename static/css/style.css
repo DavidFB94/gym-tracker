@@ -40,7 +40,6 @@ hr {
 .btn-red {
     background-color: #212529cc;
     color: #fff;
-    box-shadow: 10px;
 }
 
 .btn-red:hover,
