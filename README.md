@@ -104,6 +104,132 @@ Add/edit workout
 
 </details>
 
+## Features
+
+### Existing Features
+
+- **#1 - Landing page**
+
+    - Landing page with call to sign up to use the sites features. Links to login and signup (for new users). Add directions the user to the appropriate action.
+
+![screenshot](documentation/features/feature01.png)
+
+- **#2 - Navbar menu, home navigation logo, login status**
+
+    - Navbar with menu that changes with login status. Includes home navigation logo and hover effects. Adds visual feedback for the user.
+
+![screenshot](documentation/features/feature02.png)
+![screenshot](documentation/features/feature02-1.png)
+
+- **#3 - Dropdown nav menu for mobile users**
+
+    - Dropdown menu for mobile users. Adds maneuverability to the site for smaller screen sizes.
+
+![screenshot](documentation/features/feature03.png)
+
+- **#4 - Sign up page**
+
+    - Signup form for new users, with link to login screen in case a returning user ends up in the wrong page. Adds maneuverability to the site.
+
+![screenshot](documentation/features/feature04.png)
+
+- **#5 - Log in page**
+
+    - Log in form for returning users, with link to sign up screen in case a new user ends up in the wrong page. Adds maneuverability to the site.
+
+![screenshot](documentation/features/feature05.png)
+
+- **#6 - Submission confirmations**
+
+    - Form submission confirmation area, to inform the user when an action has been successful. Adds visual feedback for the user.
+
+![screenshot](documentation/features/feature06.png)
+![screenshot](documentation/features/feature06-1.png)
+![screenshot](documentation/features/feature06-2.png)
+![screenshot](documentation/features/feature06-3.png)
+
+- **#7 - Saved workouts**
+
+    - Saved workouts area with pagination of workouts. Pagination for avoiding clutter, and avoid excessive scrolling for smaller screen sizes.
+
+![screenshot](documentation/features/feature07.png)
+![screenshot](documentation/features/feature07-1.png)
+![screenshot](documentation/features/feature07-2.png)
+
+- **#8 - Add workout**
+
+    - Button to add workout. Opens the "add workout" form. Added hover effect (used on all the sites buttons), to increase visual feedback for the user. 
+
+![screenshot](documentation/features/feature08-1.png)
+![screenshot](documentation/features/feature08.png)
+
+- **#9 - Create workout**
+
+    - Create workout form. Allows the user to name the workout, add an optional note for reminders, and select the workout date (date input field for easy date picking).
+
+![screenshot](documentation/features/feature09.png)
+![screenshot](documentation/features/feature09-1.png)
+
+- **#10 - Workout card/module**
+
+    - Opens when a saved workout is selected. Workout title functions as a link to "edit workout" form. Shows workout date. "Add exercise" button to open add exercise form. Displays added exercises. Exercise name functions as a link to "edit exercise" form. Exercises displayed in table with name, weight, sets and reps.
+
+![screenshot](documentation/features/feature10.png)
+![screenshot](documentation/features/feature10-1.png)
+
+- **#11 - Edit workout**
+
+    - Opens when workout title is clicked in module. Displays same fields as "create workout" form, but with option to update and delete workout.
+
+![screenshot](documentation/features/feature11.png)
+
+- **#12 - Add exercise**
+
+    - Opens when exercise name is clicked in module or in "edit exercise" page. It allows the user to name the exercise, write weight, sets and reps. It also displays a list of existing exercises in the workout, to allow the user to see and be able to easily select exercises that might need to be edited/deleted. If an exercise name is clicked while in this page, the "edit exercise" form for that exercise will be opened.
+Free text is allowed in most fields to grant the user full freedom to track their exercises in the way they want.
+
+![screenshot](documentation/features/feature12.png)
+
+- **#13 - Edit exercise**
+
+    - Opens when exercise name is clicked in module or in add exercise page. Displays same fields as "add exercise" form, but with option to update and delete exercise. It also displays a list of existing exercises in the workout, to allow the user to see and be able to easily select more exercises that might need to be edited/deleted. If an exercise name is clicked while in this page, the "edit exercise" form for that exercise will be opened.
+Free text is allowed in most fields to grant the user full freedom to track their exercises in the way they want.
+
+![screenshot](documentation/features/feature13.png)
+
+- **#14 - Delete confirmation**
+
+    - All delete actions will trigger a delete confirmation module, to prevent the user from accidentally deleting content.
+
+![screenshot](documentation/features/feature14.png)
+
+- **#15 - Footer with GitHub link**
+
+    - Where the user can get information about the developer, and find the developers GitHub link.
+
+![screenshot](documentation/features/feature15.png)
+
+- **#16 - Log out page**
+
+    - Log out page with log out confirmation. Allows the user to log out, in case they want their account and saved content to not be accessed.
+
+![screenshot](documentation/features/feature16.png)
+
+### Future Features
+
+- #1 - Filter saved workouts
+    - Be able to filter by date ranges
+- #2 - Create workout calendar
+- #3 - Receive reminders
+- #4 - Create workout template
+    - Be able to re-use workouts.
+ - #5 - User profile
+ - #6 - View activity/progress
+    - Show graph of activity/progress
+ - #7 - Send feedback
+ - #8 - (Admin) Receive feedback
+ - #9 - (Admin) Organize feedback
+
 ## Tools & Technologies Used
 
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
