@@ -41,3 +41,13 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 |  | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/manage.py) | ![screenshot](documentation/validation/manage.py.png) | |
 | my_project | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/my_project/urls.py) | ![screenshot](documentation/validation/my_project-urls.py.png) | |
 
+## Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser | Home  | Add workout | Edit workout | Add exercise | Notes |
+| --- | --- | --- | --- | --- | --- |
+| Chrome | ![screenshot](documentation/browsers/chrome-home.png) | ![screenshot](documentation/browsers/chrome-add-workout.png) | ![screenshot](documentation/browsers/chrome-edit-workout.png) | ![screenshot](documentation/browsers/chrome-add-exercise.png) |  Works as expected |
+| Firefox | ![screenshot](documentation/browsers/firefox-home.png) | ![screenshot](documentation/browsers/firefox-add-workout.png) | ![screenshot](documentation/browsers/firefox-edit-workout.png) | ![screenshot](documentation/browsers/firefox-add-exercise.png) | Works as expected |
+| Edge | ![screenshot](documentation/browsers/edge-home.png) | ![screenshot](documentation/browsers/edge-add-workout.png) | ![screenshot](documentation/browsers/edge-edit-workout.png) | ![screenshot](documentation/browsers/edge-add-exercise.png) | Works as expected |
+
