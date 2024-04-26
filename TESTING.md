@@ -1,0 +1,43 @@
+# Testing
+
+> [!NOTE]  
+> Return back to the [README.md](README.md) file.
+
+## Code Validation
+
+### HTML
+
+I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
+
+| Directory | File | Screenshot | Notes |
+| --- | --- | --- | --- |
+| home | add_exercise.html | ![screenshot](documentation/validation/add_exercise.html.png) | No errors |
+| home | add_workout.html | ![screenshot](documentation/validation/add_workout.html.png) | No errors |
+| home | edit_exercise.html | ![screenshot](documentation/validation/edit_exercise.html.png) | Missing divs (fixed) |
+| home | edit_workout.html | ![screenshot](documentation/validation/edit_workout.html.png) | Missing divs (fixed) |
+| home | home.html | ![screenshot](documentation/validation/home.html.png) | No errors |
+
+### CSS
+
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+| Directory | File | Screenshot | Notes |
+| --- | --- | --- | --- |
+| static | style.css | ![screenshot](documentation/validation/static-css.png) | |
+
+### Python
+
+I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+
+| Directory | File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- | --- |
+| home | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/admin.py) | ![screenshot](documentation/validation/admin.py.png) | |
+| home | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/forms.py) | ![screenshot](documentation/validation/forms.py.png) | |
+| home | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/models.py) | ![screenshot](documentation/validation/models.py.png) | |
+| home | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/urls.py) | ![screenshot](documentation/validation/urls.py.png) | |
+| home | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/views.py) | ![screenshot](documentation/validation/views.py.png) | |
+| home | tests.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/views.py) | ![screenshot](documentation/validation/tests.py.png) | |
+| home | apps.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/views.py) | ![screenshot](documentation/validation/apps.py.png) | |
+|  | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/manage.py) | ![screenshot](documentation/validation/manage.py.png) | |
+| my_project | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/my_project/urls.py) | ![screenshot](documentation/validation/my_project-urls.py.png) | |
+
