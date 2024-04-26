@@ -62,3 +62,13 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Desktop | ![screenshot](documentation/browsers/chrome-home.png) | ![screenshot](documentation/browsers/chrome-add-workout.png) | ![screenshot](documentation/browsers/chrome-edit-workout.png) | ![screenshot](documentation/browsers/chrome-add-exercise.png) | Works as expected |
 | Sony Xperia 10 | ![screenshot](documentation/responsiveness/home-xperia.jpg) | ![screenshot](documentation/responsiveness/add-workout-xperia.jpg) | ![screenshot](documentation/responsiveness/edit-workout-xperia.jpg) | ![screenshot](documentation/responsiveness/add-exercise-xperia.jpg) | Works as expected |
 
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+| Page | Mobile | Desktop | Notes |
+| --- | --- | --- | --- |
+| Home | ![screenshot](documentation/lighthouse/lighthouse-home-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-home-desktop.png) | Some minor warnings |
+| Add workout | ![screenshot](documentation/lighthouse/lighthouse-add-workout-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-add-workout-desktop.png) | Some minor warnings |
+| Edit workout | ![screenshot](documentation/lighthouse/lighthouse-edit-workout-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-edit-workout-desktop.png) | Some minor warnings |
+| Add exercise | ![screenshot](documentation/lighthouse/lighthouse-add-exercise-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-add-exercise-desktop.png) | Some minor warnings |
