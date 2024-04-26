@@ -51,3 +51,14 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Firefox | ![screenshot](documentation/browsers/firefox-home.png) | ![screenshot](documentation/browsers/firefox-add-workout.png) | ![screenshot](documentation/browsers/firefox-edit-workout.png) | ![screenshot](documentation/browsers/firefox-add-exercise.png) | Works as expected |
 | Edge | ![screenshot](documentation/browsers/edge-home.png) | ![screenshot](documentation/browsers/edge-add-workout.png) | ![screenshot](documentation/browsers/edge-edit-workout.png) | ![screenshot](documentation/browsers/edge-add-exercise.png) | Works as expected |
 
+## Responsiveness
+
+I've tested my deployed project on multiple devices to check for responsiveness issues.
+
+| Device | home | Add workout | Edit workout | Add exercise | Notes |
+| --- | --- | --- | --- | --- |  --- |
+| Mobile (DevTools) | ![screenshot](documentation/responsiveness/home-mobile.png) | ![screenshot](documentation/responsiveness/add-workout-mobile.png) | ![screenshot](documentation/responsiveness/edit-workout-mobile.png) | ![screenshot](documentation/responsiveness/add-exercise-mobile.png) | Works as expected.  |
+| Tablet (DevTools) | ![screenshot](documentation/responsiveness/home-tablet.png) | ![screenshot](documentation/responsiveness/add-workout-tablet.png) | ![screenshot](documentation/responsiveness/edit-workout-tablet.png) | ![screenshot](documentation/responsiveness/add-exercise-tablet.png) | Works as expected |
+| Desktop | ![screenshot](documentation/browsers/chrome-home.png) | ![screenshot](documentation/browsers/chrome-add-workout.png) | ![screenshot](documentation/browsers/chrome-edit-workout.png) | ![screenshot](documentation/browsers/chrome-add-exercise.png) | Works as expected |
+| Sony Xperia 10 | ![screenshot](documentation/responsiveness/home-xperia.jpg) | ![screenshot](documentation/responsiveness/add-workout-xperia.jpg) | ![screenshot](documentation/responsiveness/edit-workout-xperia.jpg) | ![screenshot](documentation/responsiveness/add-exercise-xperia.jpg) | Works as expected |
+
