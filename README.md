@@ -110,7 +110,7 @@ Add/edit workout
 
 - **#1 - Landing page**
 
-    - Landing page with call to sign up to use the sites features. Links to login and signup (for new users). Add directions the user to the appropriate action.
+    - Landing page with a call to sign up to use the sites features, and usage instructions for the site. Links to login and signup (for new users), to direct the user to the appropriate action.
 
 ![screenshot](documentation/features/feature01.png)
 
