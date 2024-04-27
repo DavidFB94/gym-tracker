@@ -112,4 +112,4 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a site user I can view my exercises in a workout so that I can plan/track my workout. | ![screenshot](documentation/features/feature10-1.png) |
 | As a site user I can update my exercises so that I make can make changes if required. | ![screenshot](documentation/features/feature11.png) |
 | As a site user I can delete saved exercises so that I can remove exercises that I no longer wish to track. | ![screenshot](documentation/features/feature11.png)![screenshot](documentation/features/feature14-1.png) |
-| As a site admin I can moderate users and their data so that I can make changes when required. | ![screenshot](documentation/features/feature18.png) |
+| As a site admin I can moderate users and their data so that I can make changes when required. | ![screenshot](documentation/features/feature17.png) |
