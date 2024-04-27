@@ -97,3 +97,19 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Feature is expected to redirect the user to GitHub (in a new page) when the link is clicked| Tested the feature by clicking the link | The feature behaved as expected, it opened the GitHub profile in a new tab | Test concluded and passed | ![screenshot](documentation/features/feature15.png) |
 | | Feature is expected to redirect the user to a confirmation page when the log out link is clicked in the navbar | Tested the feature by clicking the link | The feature behaved as expected. I got redirected to a log out confirmation page, where my action has to be confirmed before logging me out | Test concluded and passed | ![screenshot](documentation/features/feature16.png) |
 | | Feature is expected to prevent a regular user from accessing the admin panel | Tested the feature by adding /admin to the URL as a regular user | The feature behaved as expected. I got redirected to a login page where I was prompted to login as a user with authorization | Test concluded and passed | ![screenshot](documentation/features/feature17.png) |
+
+## User Story Testing
+
+| User Story | Screenshot |
+| --- | --- |
+| As a site user I can register an account so that I can log in, and use the site in an authorized and secure way. | ![screenshot](documentation/features/feature04.png) |
+| As a site user I can log in with my account information so that I can use the sites features. | ![screenshot](documentation/features/feature05.png) |
+|  As a site user I can log out from my account so that I can avoid unauthorized access to my data. | ![screenshot](documentation/features/feature16.png) |
+| As a site user I can create a workout so that I can plan/track my workout schedule. | ![screenshot](documentation/features/feature09.png) |
+| As a site user I can view saved workouts so that I can access the saved information. | ![screenshot](documentation/features/feature07.png) |
+| As a site user I can delete saved workouts so that I can remove workouts that I no longer wish to track. | ![screenshot](documentation/features/feature11.png)![screenshot](documentation/features/feature14.png) |
+| As a site user I can create exercises so that I can add them to my workout. | ![screenshot](documentation/features/feature12.png) |
+| As a site user I can view my exercises in a workout so that I can plan/track my workout. | ![screenshot](documentation/features/feature10-1.png) |
+| As a site user I can update my exercises so that I make can make changes if required. | ![screenshot](documentation/features/feature11.png) |
+| As a site user I can delete saved exercises so that I can remove exercises that I no longer wish to track. | ![screenshot](documentation/features/feature11.png)![screenshot](documentation/features/feature14-1.png) |
+| As a site admin I can moderate users and their data so that I can make changes when required. | ![screenshot](documentation/features/feature18.png) |
