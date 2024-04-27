@@ -120,7 +120,7 @@ Defensive programming was manually tested with the below user acceptance testing
 
     ![screenshot](documentation/bugs/bug01.png)
 
-    - To fix this, I _____________________.
+    - To fix this, I had to adjust urls.py to include workout id in URL, so the exercise could be paired to the correct workout.
 
 - Python `'IntegrityError'` when submitting add workout form.
 
