@@ -160,3 +160,11 @@ All previously closed/fixed bugs can be tracked [here](https://github.com/DavidF
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/DavidFB94/gym-tracker)](https://github.com/DavidFB94/gym-tracker/issues?q=is%3Aissue+is%3Aclosed)
 
 Any remaining open issues can be tracked [here](https://github.com/DavidFB94/gym-tracker/issues).
+
+## Unfixed Bugs
+
+- On screens smaller than 320px, the workout module in the home screen starts to have `overflow-x` scrolling.
+
+    ![screenshot](documentation/bugs/unfixed-bug01.png)
+
+    - Attempted fix: I tried to add additional media queries to handle this, but the text and links got too small and difficult to access.
