@@ -55,7 +55,7 @@ Font was applied automatically by Bootstrap, which selects the best `font-family
 - As a site user I can create a workout so that I can plan/track my workout schedule.
 - As a site user I can view saved workouts so that I can access the saved information.
 - As a site user I can delete saved workouts so that I can remove workouts that I no longer wish to track.
-- As a site user I can create exercises so that I can make add them to my workout.
+- As a site user I can create exercises so that I can add them to my workout.
 - As a site user I can view my exercises in a workout so that I can plan/track my workout.
 - As a site user I can update my exercises so that I make can make changes if required.
 - As a site user I can delete saved exercises so that I can remove exercises that I no longer wish to track.
@@ -214,6 +214,18 @@ Free text is allowed in most fields to grant the user full freedom to track thei
     - Log out page with log out confirmation. Allows the user to log out, in case they want their account and saved content to not be accessed.
 
 ![screenshot](documentation/features/feature16.png)
+
+- **#17 - Admin board**
+
+    - Admin dashboard for users with enahanched access. Allows the admin to oversee and moderate the site.
+
+![screenshot](documentation/features/feature17.png)
+
+- **#18 - Restricted access for regular users**
+
+    - Blocks regular users from accessing admin dashboard. Adds security to the site and database.
+
+![screenshot](documentation/features/feature18.png)
 
 ### Future Features
 
