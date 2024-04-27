@@ -113,3 +113,50 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a site user I can update my exercises so that I make can make changes if required. | ![screenshot](documentation/features/feature11.png) |
 | As a site user I can delete saved exercises so that I can remove exercises that I no longer wish to track. | ![screenshot](documentation/features/feature11.png)![screenshot](documentation/features/feature14-1.png) |
 | As a site admin I can moderate users and their data so that I can make changes when required. | ![screenshot](documentation/features/feature17.png) |
+## Bugs
+
+- Python `'NoReverseMatch'` when opening add exercise form. 
+- For no reverse match I had to adjust urls.py to include workout id in URL, so the exercise could be paired to the correct workout.
+
+    ![screenshot](documentation/bugs/bug01.png)
+
+    - To fix this, I _____________________.
+
+- Python `'IntegrityError'` when submitting add workout form.
+
+    ![screenshot](documentation/bugs/bug02.png)
+
+    - To fix this, I had to adjust my views.py. Needed to add background intervention to connect to user and workout, since fields did not exist.
+
+- Python  `IntegrityError` when submitting add exercise form.
+
+    ![screenshot](documentation/bugs/bug03.png)
+
+    - To fix this, I had to adjust my views.py. Needed to add background intervention to connect to user and workout, since fields did not exist.
+
+- Python `ValueError` when opening edit workout form (after re-formatting forms folder).
+
+    ![screenshot](documentation/bugs/bug04.png)
+
+    - I found that I had accidentally deleted the meta class in the WorkoutForm. To fix this, all I had to do was add it back.
+
+### GitHub **Issues**
+
+**Fixed Bugs**
+
+[![GitHub issue custom search](https://img.shields.io/github/issues-search?query=repo%3ADavidFB94%2Fgym-tracker%20label%3Abug&label=bugs)](https://github.com/DavidFB94/gym-tracker/issues?q=is%3Aissue+is%3Aclosed+label%3Abug)
+
+All previously closed/fixed bugs can be tracked [here](https://github.com/DavidFB94/gym-tracker/issues?q=is%3Aissue+is%3Aclosed).
+
+| Bug | Status |
+| --- | --- |
+| [Python `IntegrityError` when submitting add workout form](https://github.com/DavidFB94/gym-tracker/issues/3#issuecomment-2059101333) | Closed |
+| [Python `NoReverseMatch` when trying to open add exercise form](https://github.com/DavidFB94/gym-tracker/issues/13#issuecomment-2080838961) | Closed |
+| [Python `IntegrityError` when submitting add exercise form](https://github.com/DavidFB94/gym-tracker/issues/13#issuecomment-2080841957) | Closed |
+
+**Open Issues**
+
+[![GitHub issues](https://img.shields.io/github/issues/DavidFB94/gym-tracker)](https://github.com/DavidFB94/gym-tracker/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/DavidFB94/gym-tracker)](https://github.com/DavidFB94/gym-tracker/issues?q=is%3Aissue+is%3Aclosed)
+
+Any remaining open issues can be tracked [here](https://github.com/DavidFB94/gym-tracker/issues).
