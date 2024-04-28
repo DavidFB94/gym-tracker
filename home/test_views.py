@@ -87,3 +87,17 @@ class TestHomeViews(TestCase):
         self.assertFalse(response.context["form"].errors, msg="The form is missing required input.")
         self.assertEqual(response.status_code, 200)
 
+    def test_unsuccessful_add_exercise_form_submission(self):
+        """
+        Test for missing reps in submitting exercise form
+        """
+        workout_id = self.workout.id
+        exercise_data = {
+            "name": "Squat",
+            "weight": "100",
+            "sets": "5",
+            "reps": ""
+        }
+        response = self.client.post(reverse("add_exercise", kwargs={'id': workout_id}), data=exercise_data)
+        self.assertTrue(response.context["form"].errors, msg="The form has all the required inputs.")
+        self.assertEqual(response.status_code, 200)
