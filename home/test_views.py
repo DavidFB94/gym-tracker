@@ -60,3 +60,15 @@ class TestHomeViews(TestCase):
         response = self.client.post(reverse("add_workout"), workout_data)
         self.assertRedirects(response, expected_url=reverse("home"), status_code=302, target_status_code=200)
 
+    def test_unsuccessful_add_workout_form_submission(self):
+        """
+        Test for missing name in submiting a workout form
+        """
+        workout_data = {
+            "name": "",
+            "note": "A note",
+            "date": "2024-10-10"
+        }
+        response = self.client.post(reverse("add_workout"), workout_data)
+        self.assertTrue(response.context["form"].errors, msg="The form has all the required inputs.")
+
