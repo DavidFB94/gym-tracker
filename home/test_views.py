@@ -22,3 +22,16 @@ class TestHomeViews(TestCase):
         self.exercise = Exercise(name="", weight="", sets="0", reps="", workout=self.workout)
         self.workout.save()
         self.exercise.save()
+
+    def test_render_add_workout_page_with_workout_form(self):
+        """
+        Verifies get request for add_workout containing a workout form
+        """
+        response = self.client.get(reverse(
+            "add_workout",
+        ))
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b"<form", response.content)
+        self.assertIsInstance(
+            response.context["workout_form"], WorkoutForm)
+
