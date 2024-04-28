@@ -48,3 +48,15 @@ class TestHomeViews(TestCase):
         self.assertIsInstance(
             response.context["exercise_form"], ExerciseForm)
 
+    def test_successful_add_workout_form_submission(self):
+        """
+        Test for successfully submitting a workout form
+        """
+        workout_data = {
+            "name": "Workout 1",
+            "note": "A note",
+            "date": "2024-10-10"
+        }
+        response = self.client.post(reverse("add_workout"), workout_data)
+        self.assertRedirects(response, expected_url=reverse("home"), status_code=302, target_status_code=200)
+
