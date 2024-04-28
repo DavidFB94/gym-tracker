@@ -13,13 +13,17 @@ class TestHomeViews(TestCase):
         Creates workout + exercise content
         """
         self.user = User.objects.create_superuser(
-            username ="myUsername",
-            password ="myPassword",
-            email = "test@test.com"
+            username="myUsername",
+            password="myPassword",
+            email="test@test.com"
         )
         self.client.login(username="myUsername", password="myPassword")
-        self.workout = Workout(name="", note="", date="2024-01-01", user=self.user)
-        self.exercise = Exercise(name="", weight="", sets="0", reps="", workout=self.workout)
+        self.workout = Workout(
+            name="", note="", date="2024-01-01", user=self.user
+            )
+        self.exercise = Exercise(
+            name="", weight="", sets="0", reps="", workout=self.workout
+            )
         self.workout.save()
         self.exercise.save()
 
@@ -33,7 +37,8 @@ class TestHomeViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"<form", response.content)
         self.assertIsInstance(
-            response.context["workout_form"], WorkoutForm)
+            response.context["workout_form"], WorkoutForm
+        )
 
     def test_render_add_exercise_page_with_exercise_form(self):
         """
@@ -46,7 +51,8 @@ class TestHomeViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"<form", response.content)
         self.assertIsInstance(
-            response.context["exercise_form"], ExerciseForm)
+            response.context["exercise_form"], ExerciseForm
+        )
 
     def test_successful_add_workout_form_submission(self):
         """
@@ -58,7 +64,10 @@ class TestHomeViews(TestCase):
             "date": "2024-10-10"
         }
         response = self.client.post(reverse("add_workout"), workout_data)
-        self.assertRedirects(response, expected_url=reverse("home"), status_code=302, target_status_code=200)
+        self.assertRedirects(
+            response, expected_url=reverse("home"), status_code=302,
+            target_status_code=200
+        )
 
     def test_unsuccessful_add_workout_form_submission(self):
         """
@@ -70,7 +79,10 @@ class TestHomeViews(TestCase):
             "date": "2024-10-10"
         }
         response = self.client.post(reverse("add_workout"), workout_data)
-        self.assertTrue(response.context["form"].errors, msg="The form has all the required inputs.")
+        self.assertTrue(
+            response.context["form"].errors,
+            msg="The form has all the required inputs."
+        )
 
     def test_successful_add_exercise_form_submission(self):
         """
@@ -83,8 +95,12 @@ class TestHomeViews(TestCase):
             "sets": "5",
             "reps": "5"
         }
-        response = self.client.post(reverse("add_exercise", kwargs={'id': workout_id}), data=exercise_data)
-        self.assertFalse(response.context["form"].errors, msg="The form is missing required input.")
+        response = self.client.post(reverse(
+            "add_exercise", kwargs={'id': workout_id}), data=exercise_data)
+        self.assertFalse(
+            response.context["form"].errors,
+            msg="The form is missing required input."
+        )
         self.assertEqual(response.status_code, 200)
 
     def test_unsuccessful_add_exercise_form_submission(self):
@@ -98,6 +114,10 @@ class TestHomeViews(TestCase):
             "sets": "5",
             "reps": ""
         }
-        response = self.client.post(reverse("add_exercise", kwargs={'id': workout_id}), data=exercise_data)
-        self.assertTrue(response.context["form"].errors, msg="The form has all the required inputs.")
+        response = self.client.post(reverse(
+            "add_exercise", kwargs={'id': workout_id}), data=exercise_data)
+        self.assertTrue(
+            response.context["form"].errors,
+            msg="The form has all the required inputs."
+        )
         self.assertEqual(response.status_code, 200)
