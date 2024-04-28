@@ -35,3 +35,16 @@ class TestHomeViews(TestCase):
         self.assertIsInstance(
             response.context["workout_form"], WorkoutForm)
 
+    def test_render_add_exercise_page_with_exercise_form(self):
+        """
+        Verifies get request for add_exercise containing an exercise form
+        """
+        workout_id = self.workout.id
+        response = self.client.get(reverse(
+            "add_exercise", kwargs={'id': workout_id}
+        ))
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b"<form", response.content)
+        self.assertIsInstance(
+            response.context["exercise_form"], ExerciseForm)
+
