@@ -29,3 +29,32 @@ class TestWorkoutForm(TestCase):
         self.assertFalse(workout_form.is_valid(), msg="Form is valid")
 
 
+class TestExerciseForm(TestCase):
+
+    def test_exercise_form_is_valid(self):
+        """
+        Test for all fields
+        """
+        exercise_form = ExerciseForm(
+            {
+            "name": "Squat",
+            "weight": "100",
+            "sets": "3",
+            "reps": "12"
+            }
+            )
+        self.assertTrue(exercise_form.is_valid(), msg="Form is not valid")
+    
+    def test_exercise_form_is_invalid(self):
+        """
+        Test for all fields
+        """
+        exercise_form = ExerciseForm(
+            {
+            "name": "Squat",
+            "weight": "100",
+            "sets": "3",
+            "reps": ""
+            }
+            )
+        self.assertFalse(exercise_form.is_valid(), msg="Form is valid")
