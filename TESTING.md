@@ -126,7 +126,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a site user I can delete saved exercises so that I can remove exercises that I no longer wish to track. | ![screenshot](documentation/features/feature11.png)![screenshot](documentation/features/feature14-1.png) |
 | As a site admin I can moderate users and their data so that I can make changes when required. | ![screenshot](documentation/features/feature17.png) |
 
-## Automated Testing (not yet completed)
+## Automated Testing
 
 I have conducted a series of automated tests on my application.
 
