@@ -350,9 +350,17 @@ To obtain my own Postgres Database from Code Institute, I followed these steps:
 This project uses [Whitenoise](https://whitenoise.readthedocs.io/en/latest/) to store static files online, due to the fact that Heroku doesn't persist this type of data.
 
 To install whitenoise, run the `pip install whitenoise` command.
-Include it in MIDDLEWARE inside settings.py
 
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+Edit your settings.py file and add WhiteNoise to the MIDDLEWARE list. The WhiteNoise middleware should be placed directly after the Django SecurityMiddleware (if you are using it) and before all other middleware:
+
+```
+MIDDLEWARE = [
+    # ...
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # ...
+]
+```
 
 ### Heroku Deployment
 
