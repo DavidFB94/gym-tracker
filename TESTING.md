@@ -36,7 +36,8 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | home | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/models.py) | ![screenshot](documentation/validation/models.py.png) | |
 | home | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/urls.py) | ![screenshot](documentation/validation/urls.py.png) | |
 | home | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/views.py) | ![screenshot](documentation/validation/views.py.png) | |
-| home | tests.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/views.py) | ![screenshot](documentation/validation/tests.py.png) | |
+| home | test_forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/views.py) | ![screenshot](documentation/validation/tests_forms.py.png) | |
+| home | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/views.py) | ![screenshot](documentation/validation/tests_views.py.png) | |
 | home | apps.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/home/views.py) | ![screenshot](documentation/validation/apps.py.png) | |
 |  | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/manage.py) | ![screenshot](documentation/validation/manage.py.png) | |
 | my_project | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/DavidFB94/gym-tracker/main/my_project/urls.py) | ![screenshot](documentation/validation/my_project-urls.py.png) | |
@@ -124,6 +125,208 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a site user I can update my exercises so that I make can make changes if required. | ![screenshot](documentation/features/feature11.png) |
 | As a site user I can delete saved exercises so that I can remove exercises that I no longer wish to track. | ![screenshot](documentation/features/feature11.png)![screenshot](documentation/features/feature14-1.png) |
 | As a site admin I can moderate users and their data so that I can make changes when required. | ![screenshot](documentation/features/feature17.png) |
+
+## Automated Testing (not yet completed)
+
+I have conducted a series of automated tests on my application.
+
+I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+
+### Python (Unit Testing)
+
+I have used Django's built-in unit testing framework to test the application functionality.
+
+In order to run the tests, I ran the following command in the terminal each time:
+
+`python3 manage.py test name-of-app.name-of-test-file`
+
+Below are the results from the various apps on my application that I've tested:
+
+#### `home` app > `test_forms.py`
+
+```python
+class TestWorkoutForm(TestCase):
+
+    def test_workout_form_is_valid(self):
+        """
+        Test for required fields
+        """
+        workout_form = WorkoutForm(
+            {
+                "name": "My first workout",
+                "date": "10/06/2024"
+            }
+        )
+        self.assertTrue(workout_form.is_valid(), msg="Form is not valid")
+
+    def test_workout_form_is_invalid(self):
+        """
+        Test for required fields
+        """
+        workout_form = WorkoutForm(
+            {
+                "name": "",
+                "date": "10/06/2024"
+            }
+        )
+        self.assertFalse(workout_form.is_valid(), msg="Form is valid")
+
+
+class TestExerciseForm(TestCase):
+
+    def test_exercise_form_is_valid(self):
+        """
+        Test for all fields
+        """
+        exercise_form = ExerciseForm(
+            {
+                "name": "Squat",
+                "weight": "100",
+                "sets": "3",
+                "reps": "12"
+            }
+        )
+        self.assertTrue(exercise_form.is_valid(), msg="Form is not valid")
+
+    def test_exercise_form_is_invalid(self):
+        """
+        Test for all fields
+        """
+        exercise_form = ExerciseForm(
+            {
+                "name": "Squat",
+                "weight": "100",
+                "sets": "3",
+                "reps": ""
+            }
+        )
+        self.assertFalse(exercise_form.is_valid(), msg="Form is valid")
+```
+
+![home app > test_forms.py](documentation/tests/py-home-test-forms.png)
+
+#### `home` app > `test_views.py`
+
+```python
+class TestHomeViews(TestCase):
+
+    def setUp(self):
+        """
+        Sets up superuser + logs in to access all forms
+        Creates workout + exercise content
+        """
+        self.user = User.objects.create_superuser(
+            username="myUsername",
+            password="myPassword",
+            email="test@test.com"
+        )
+        self.client.login(username="myUsername", password="myPassword")
+        self.workout = Workout(
+            name="", note="", date="2024-01-01", user=self.user
+        )
+        self.exercise = Exercise(
+            name="", weight="", sets="0", reps="", workout=self.workout
+        )
+        self.workout.save()
+        self.exercise.save()
+
+    def test_render_add_workout_page_with_workout_form(self):
+        """
+        Verifies get request for add_workout containing a workout form
+        """
+        response = self.client.get(reverse(
+            "add_workout",
+        ))
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b"<form", response.content)
+        self.assertIsInstance(
+            response.context["workout_form"], WorkoutForm
+        )
+
+    def test_render_add_exercise_page_with_exercise_form(self):
+        """
+        Verifies get request for add_exercise containing an exercise form
+        """
+        workout_id = self.workout.id
+        response = self.client.get(reverse(
+            "add_exercise", kwargs={'id': workout_id}
+        ))
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b"<form", response.content)
+        self.assertIsInstance(
+            response.context["exercise_form"], ExerciseForm
+        )
+
+    def test_successful_add_workout_form_submission(self):
+        """
+        Test for successfully submitting a workout form
+        """
+        workout_data = {
+            "name": "Workout 1",
+            "note": "A note",
+            "date": "2024-10-10"
+        }
+        response = self.client.post(reverse("add_workout"), workout_data)
+        self.assertRedirects(
+            response, expected_url=reverse("home"), status_code=302,
+            target_status_code=200
+        )
+
+    def test_unsuccessful_add_workout_form_submission(self):
+        """
+        Test for missing name in submiting a workout form
+        """
+        workout_data = {
+            "name": "",
+            "note": "A note",
+            "date": "2024-10-10"
+        }
+        response = self.client.post(reverse("add_workout"), workout_data)
+        self.assertTrue(
+            response.context["form"].errors,
+            msg="The form has all the required inputs."
+        )
+
+    def test_successful_add_exercise_form_submission(self):
+        """
+        Test for successfully submitting an exercise form
+        """
+        workout_id = self.workout.id
+        exercise_data = {
+            "name": "Squat",
+            "weight": "100",
+            "sets": "5",
+            "reps": "5"
+        }
+        response = self.client.post(reverse(
+            "add_exercise", kwargs={'id': workout_id}), data=exercise_data)
+        self.assertFalse(
+            response.context["form"].errors,
+            msg="The form is missing required input."
+        )
+        self.assertEqual(response.status_code, 200)
+
+    def test_unsuccessful_add_exercise_form_submission(self):
+        """
+        Test for missing reps in submitting exercise form
+        """
+        workout_id = self.workout.id
+        exercise_data = {
+            "name": "Squat",
+            "weight": "100",
+            "sets": "5",
+            "reps": ""
+        }
+        response = self.client.post(reverse(
+            "add_exercise", kwargs={'id': workout_id}), data=exercise_data)
+        self.assertTrue(
+            response.context["form"].errors,
+            msg="The form has all the required inputs."
+        )
+        self.assertEqual(response.status_code, 200)
+```
+
+![home app > test_views.py](documentation/tests/py-home-test-views.png)
 
 ## Bugs
 
