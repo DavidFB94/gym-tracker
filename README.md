@@ -347,7 +347,7 @@ To obtain my own Postgres Database from Code Institute, I followed these steps:
 
 ### WhiteNoise
 
-This project uses the [Whitenoise](https://whitenoise.readthedocs.io/en/latest/) to store static files online, due to the fact that Heroku doesn't persist this type of data.
+This project uses [Whitenoise](https://whitenoise.readthedocs.io/en/latest/) to store static files online, due to the fact that Heroku doesn't persist this type of data.
 
 To install whitenoise, run the `pip install whitenoise` command.
 Include it in MIDDLEWARE inside settings.py
@@ -511,7 +511,7 @@ In home.html template, the pagination was copied from Code Institutes walkthroug
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [FontAwesome](fontawesome.com/icons/rectangle-list?f=sharp&s=regular) | entire site | image | favicon on all pages |
+| [FontAwesome](https://fontawesome.com/icons/rectangle-list?f=sharp&s=regular) | entire site | image | favicon on all pages |
 | [GitHub](https://github.com/logos) | footer | image | GitHub link icon in footer |
 
 ### Acknowledgements
