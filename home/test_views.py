@@ -20,10 +20,10 @@ class TestHomeViews(TestCase):
         self.client.login(username="myUsername", password="myPassword")
         self.workout = Workout(
             name="", note="", date="2024-01-01", user=self.user
-            )
+        )
         self.exercise = Exercise(
             name="", weight="", sets="0", reps="", workout=self.workout
-            )
+        )
         self.workout.save()
         self.exercise.save()
 
